@@ -1,21 +1,10 @@
-import {User} from './models/User'
+import { User } from './models/User'
 
-const user = new User({name: 'myname', age: 20})
+const user = new User({  })
 
-user.on('change', () => {
-  console.log('Change #1')
-})
+user.set({ name: 'new name' })
+user.set({age: 20})
 
-user.on('change', () => {
-  console.log('Change #2')
-})
-
-user.on('save', () => {
-  console.log('Save was triggered')
-})
-
-user.trigger('change')
-user.trigger('save')
-user.trigger('savesdfsf')
+user.save()
 
 console.log(user)
